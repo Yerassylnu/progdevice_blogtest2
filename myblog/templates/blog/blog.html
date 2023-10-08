@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Блог</title>
+    <style>
+    	.navbar {
+    		background: blue;
+    		padding: 10px 50px;
+    		max-width: 1000px;
+    		display: flex;
+    		justify-content: space-around;
+    		align-items: center;
+    		border: 5px orange solid;
+    	}
+
+    	a {
+    		list-style: none;
+    		text-decoration: none;
+    		color: white;
+    		font-size: 20px;
+    	}
+
+    	h3 + p + p {
+    		margin-bottom: 50px;
+    	}
+    </style>
+</head>
+<body>
+	<div class="navbar">
+		<h2>ProgDevice Blog - Блог о IT технологиях!</h2>
+		<a href="https://t.me/progdevice">Подписаться на телеграм📣</a>
+	</div>
+    {% for post in post_list %}
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.description }}</p>
+        <p>{{ post.author }}<p>
+    {% endfor %}
+</body>
+</html>
